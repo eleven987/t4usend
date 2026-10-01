@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  T4U Send —— 把 4U 物品（jpg / bin）通过 NFC 发给拓麻歌子 4U / 4U+ 实机。
+
+  设计要点：
+    * 只申请 NFC 权限，不申请 INTERNET —— 全程本地，不产生任何网络请求。
+    * launchMode=singleTask + onNewIntent：4U 会反向推一条 NDEF 回来，
+      靠 NDEF_DISCOVERED 意图把回包交给已经在跑的本 Activity。
+    * meta-data android.nfc.disable_beam_default=true：关掉系统默认的
+      「Beam 发送当前页面 URL」行为，只发我们指定的载荷（原厂 app 同样做法）。
+    * minSdk 19 / targetSdk 25：同时覆盖 Nexus 4 (Android 5) 与 Nexus 6 (Android 7)。
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.t4usend"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" android:required="true" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:allowBackup="true">
+
+        <meta-data
+            android:name="android.nfc.disable_beam_default"
+            android:value="true" />
+
+        <activity
+            android:name="com.t4usend.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- 4U 回包：正式 MIME 类型 -->
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/jp.co.bandai.tamagotchiapp" />
+            </intent-filter>
+
+            <!-- 回包 MIME 未知时的兜底：任何 NDEF 消息都收 -->
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

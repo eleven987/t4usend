@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 默认语言 = 英文（非中文系统的兜底）。中文见 res/values-zh/strings.xml。 -->
+<resources>
+    <string name="app_name">T4U Send</string>
+
+    <string name="mode_send">Send item</string>
+    <string name="mode_spot">Touch spot card</string>
+
+    <string name="pick_file">Pick file (jpg / bin)</string>
+    <string name="no_file">No file selected</string>
+    <string name="start_send">Start sending</string>
+    <string name="redo">Back to tap 1</string>
+    <string name="skip_handshake">Skip handshake, send item</string>
+    <string name="stop_send">Stop</string>
+    <string name="nfc_off">NFC is off - tap here to open settings</string>
+
+    <!-- ============ 碰触点写卡 / 读卡 ============ -->
+    <string name="spot_hint">Event type (1..10)</string>
+    <string name="spot_write">Write card (hold the NFC card to the back of the phone)</string>
+    <string name="spot_probe">Read card (read-only diagnostic)</string>
+    <string name="spot_need_prepare">Press "Write card" first, or use "Read card" for a read-only check</string>
+    <string name="spot_placeholder">Card requirement: the NFC card MUST be Type 2 - NTAG213 / NTAG215 / NTAG216 or Mifare Ultralight. An M1 / Mifare Classic card does NOT work (different write command). Hold the card to the back of the phone; the result appears here. Not verified on real hardware yet.</string>
+
+    <string name="lang_auto">Follow system</string>
+    <string name="lang_zh">中文</string>
+    <string name="lang_en">English</string>
+
+    <string name="nfc_missing">This device has no NFC hardware</string>
+    <string name="nfc_on">NFC is on</string>
+
+    <string name="toast_no_nfc">No NFC on this device</string>
+    <string name="toast_nfc_off">Turn on NFC first</string>
+    <string name="toast_pick_first">Pick an item file first</string>
+    <string name="toast_no_picker">No file picker on this device</string>
+    <string name="toast_no_nfc_settings">Cannot open NFC settings</string>
+
+    <string name="step_tap1">Step 1: hold the phone to the 4U and do not pull it away. When the screen shrinks, tap it (handshake)</string>
+    <string name="step_tap2">Step 2: keep them in contact, do not pull apart. When the screen shrinks again, tap it (send item)</string>
+    <string name="step_tap2_skip">Step 2 (handshake skipped): hold the phone to the 4U. When the screen shrinks, tap it (send item)</string>
+    <string name="step_reply_got">Reply received. Keep them in contact, do not pull apart. When the screen shrinks again, tap it (send item)</string>
+    <string name="step_done">Done. Keep them in contact and tap again to resend, or press Stop</string>
+    <string name="step_stopped">Stopped</string>
+
+    <string name="log_handshake_loaded">Handshake payload %1$d bytes</string>
+    <string name="log_handshake_fail">Cannot read handshake template: %1$s</string>
+    <string name="log_back_step1">Back to step 1</string>
+    <string name="log_skip_step2">Jumped to step 2</string>
+    <string name="log_send_start">Sending started, waiting for tap 1</string>
+    <string name="what_handshake">handshake</string>
+    <string name="what_item">item</string>
+    <string name="log_payload_empty">!! %1$s payload is empty, nothing sent this time</string>
+    <string name="log_supply_requested">Supply requested -> sending %1$s, %2$d bytes</string>
+    <string name="log_handshake_delivered">Handshake delivered</string>
+    <string name="log_item_delivered">Item delivered</string>
+    <string name="log_no_ndef">NFC event received but no NDEF payload</string>
+    <string name="log_reply_records">Reply from 4U: %1$d record(s)</string>
+    <string name="log_record">  record %1$d bytes: %2$s</string>
+    <string name="log_dev_id">  device ID = %1$s</string>
+    <string name="log_birthday">  birthday = %1$d/%2$d</string>
+    <string name="log_item_loaded">Loaded a %1$d-byte record</string>
+    <string name="file_bad">This file cannot be used: %1$s</string>
+    <string name="log_rejected">Rejected: %1$s</string>
+    <string name="file_read_fail">Cannot read file: %1$s</string>
+    <string name="log_read_fail">Read failed: %1$s</string>
+    <string name="spot_reader_on">Reader started - hold the NFC card to the back of the phone</string>
+    <string name="spot_reader_fail">Cannot start reader: %1$s</string>
+    <string name="spot_event">Event type %1$d, record = %2$s</string>
+    <string name="spot_event_clamped">Event type must be 1..10, changed to 1</string>
+    <string name="spot_probe_started">Read-only mode - hold any NFC card to the back of the phone to inspect it</string>
+
+    <string name="desc_record">%1$d-byte record</string>
+    <string name="desc_offset"> (file offset 0x%1$s)</string>
+    <string name="desc_name">, inner name %1$s</string>
+    <string name="desc_slot">, slot %1$s</string>
+    <string name="desc_type_cat">, type=0x%1$s cat=0x%2$s</string>
+    <string name="desc_payload">payload %1$d bytes (total field=%2$d, item=%3$d, flag=0x%4$s)</string>
+    <string name="desc_payload_empty">(payload is empty)</string>
+    <string name="bad_too_small">File too small (%1$d bytes), not a 4U item record</string>
+    <string name="bad_no_record">No valid TAMAGO record found (maybe not a 4U item file)</string>
+
+    <!-- 写卡结果（TouchSpot.T 模板） -->
+    <string name="spot_no_tag">No tag found</string>
+    <string name="spot_bad_len">Record length must be %1$d bytes</string>
+    <string name="spot_not_nfca">This card is not an NFC-A tag, cannot write</string>
+    <string name="spot_m1_card">This is a Mifare Classic (M1) card - NOT a Type 2 card, it cannot be used as a touch spot and writing will fail. Use NTAG213/215/216 or Mifare Ultralight.</string>
+    <string name="spot_m1_hint">(hint: the card must be Type 2, i.e. NTAG213/215/216 or Mifare Ultralight. An M1 / Mifare Classic card cannot be written. Use "Read card" to check the card type.)</string>
+    <string name="spot_page_fail">Write to page %1$d failed (response %2$s)</string>
+    <string name="spot_readback_fail">Read-back of page %1$d failed</string>
+    <string name="spot_done_same">Write done, read-back matches</string>
+    <string name="spot_done_diff">Write done, read-back differs (below)</string>
+    <string name="spot_io_fail">Write IO failed: %1$s</string>
+
+    <!-- 读卡诊断结果（TouchSpot.T 模板） -->
+    <string name="probe_no_tag">No tag found</string>
+    <string name="probe_tech">tech: %1$s</string>
+    <string name="probe_uid">UID : %1$s  (%2$d bytes)</string>
+    <string name="probe_not_nfca">not an NFC-A tag - cannot be used as a touch spot</string>
+    <string name="probe_atqa_sak">ATQA %1$s   SAK %2$s</string>
+    <string name="probe_pages">page %1$2d-%2$2d : %3$s</string>
+    <string name="probe_chip">chip: %1$s (vendor %2$s)</string>
+    <string name="probe_no_version">GET_VERSION no reply (old Ultralight or a clone; still usable)</string>
+    <string name="probe_verdict_ok">=&gt; Type 2 card, usable as a touch spot. Pages 4..15 are the 48-byte record area (shown above as page 04-15).</string>
+    <string name="probe_io_fail">Read failed: %1$s</string>
+</resources>

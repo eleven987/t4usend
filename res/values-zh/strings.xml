@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 中文（系统语言为 zh 时自动使用；也可在界面里手动切到中文）。 -->
+<resources>
+    <string name="app_name">T4U 发送</string>
+
+    <string name="mode_send">发送物品</string>
+    <string name="mode_spot">碰触点写卡</string>
+
+    <string name="pick_file">选择文件（jpg / bin）</string>
+    <string name="no_file">尚未选择文件</string>
+    <string name="start_send">开始发送</string>
+    <string name="redo">重贴一次</string>
+    <string name="skip_handshake">跳过握手，直接发物品</string>
+    <string name="stop_send">停止</string>
+    <string name="nfc_off">NFC 未开启，点这里去打开</string>
+
+    <!-- ============ 碰触点写卡 / 读卡 ============ -->
+    <string name="spot_hint">事件类型（1..10）</string>
+    <string name="spot_write">开始写卡（把 NFC 卡贴到手机背面）</string>
+    <string name="spot_probe">读卡诊断（只读，不写卡）</string>
+    <string name="spot_need_prepare">先点「开始写卡」；只想检查的话点「读卡诊断」</string>
+    <string name="spot_placeholder">卡型要求：必须是 Type 2 的 NFC 卡 —— NTAG213 / NTAG215 / NTAG216 或 Mifare Ultralight。M1 卡（Mifare Classic）不行，它用的是另一套写命令。把卡贴到手机背面，结果会显示在这里。本功能尚未在实机上验证过。</string>
+
+    <string name="lang_auto">跟随系统</string>
+    <string name="lang_zh">中文</string>
+    <string name="lang_en">English</string>
+
+    <string name="nfc_missing">本机没有 NFC 硬件</string>
+    <string name="nfc_on">NFC 已开启</string>
+
+    <string name="toast_no_nfc">本机没有 NFC</string>
+    <string name="toast_nfc_off">请先打开 NFC</string>
+    <string name="toast_pick_first">先选一个物品文件</string>
+    <string name="toast_no_picker">这台机器没有文件选择器</string>
+    <string name="toast_no_nfc_settings">打不开 NFC 设置</string>
+
+    <string name="step_tap1">第 1 步：把手机贴住 4U 不要离开，屏幕缩小后点一下手机屏幕（发握手）</string>
+    <string name="step_tap2">第 2 步：保持贴住不要分开，屏幕再缩小后点一下手机屏幕（发物品）</string>
+    <string name="step_tap2_skip">第 2 步（跳过握手）：把手机贴住 4U，屏幕缩小后点一下手机屏幕（发物品）</string>
+    <string name="step_reply_got">已收到回包。保持贴住不要分开，屏幕再缩小后点一下手机屏幕（发物品）</string>
+    <string name="step_done">完成。保持贴住可再点一次重发，或按「停止」</string>
+    <string name="step_stopped">已停止</string>
+
+    <string name="log_handshake_loaded">握手载荷 %1$d 字节</string>
+    <string name="log_handshake_fail">读握手模板失败：%1$s</string>
+    <string name="log_back_step1">手动退回第 1 步</string>
+    <string name="log_skip_step2">手动跳到第 2 步</string>
+    <string name="log_send_start">开始发送，等第 1 贴</string>
+    <string name="what_handshake">握手</string>
+    <string name="what_item">物品</string>
+    <string name="log_payload_empty">!! %1$s载荷为空，本次不发</string>
+    <string name="log_supply_requested">被要求供货 -> 发%1$s %2$d 字节</string>
+    <string name="log_handshake_delivered">握手已送达</string>
+    <string name="log_item_delivered">物品已送达</string>
+    <string name="log_no_ndef">收到 NFC 事件但没有 NDEF 载荷</string>
+    <string name="log_reply_records">收到 4U 回包：%1$d 条记录</string>
+    <string name="log_record">  记录 %1$d 字节：%2$s</string>
+    <string name="log_dev_id">  设备 ID = %1$s</string>
+    <string name="log_birthday">  生日 = %1$d/%2$d</string>
+    <string name="log_item_loaded">已载入 %1$d 字节记录</string>
+    <string name="file_bad">这个文件不能用：%1$s</string>
+    <string name="log_rejected">拒绝：%1$s</string>
+    <string name="file_read_fail">读文件失败：%1$s</string>
+    <string name="log_read_fail">读文件失败：%1$s</string>
+    <string name="spot_reader_on">读卡已开启，把 NFC 卡贴到手机背面</string>
+    <string name="spot_reader_fail">开读卡失败：%1$s</string>
+    <string name="spot_event">事件类型 %1$d，记录 = %2$s</string>
+    <string name="spot_event_clamped">事件类型只能是 1..10，已改成 1</string>
+    <string name="spot_probe_started">只读模式已开启，把任意 NFC 卡贴到手机背面即可查看</string>
+
+    <string name="desc_record">记录 %1$d 字节</string>
+    <string name="desc_offset">（文件内偏移 0x%1$s）</string>
+    <string name="desc_name">，内部名 %1$s</string>
+    <string name="desc_slot">，槽 %1$s</string>
+    <string name="desc_type_cat">，type=0x%1$s cat=0x%2$s</string>
+    <string name="desc_payload">载荷 %1$d 字节（总长字段=%2$d，物品长=%3$d，标志=0x%4$s）</string>
+    <string name="desc_payload_empty">（载荷为空）</string>
+    <string name="bad_too_small">文件太小（%1$d 字节），不是 4U 物品记录</string>
+    <string name="bad_no_record">没找到合法的 TAMAGO 记录（可能不是 4U 物品文件）</string>
+
+    <!-- 写卡结果（TouchSpot.T 模板） -->
+    <string name="spot_no_tag">没有拿到卡</string>
+    <string name="spot_bad_len">记录长度必须是 %1$d 字节</string>
+    <string name="spot_not_nfca">这张卡不是 NFC-A 标签，无法写入</string>
+    <string name="spot_m1_card">这是一张 M1 卡（Mifare Classic），不是 Type 2，不能当碰触点，写入必然失败。请用 NTAG213/215/216 或 Mifare Ultralight。</string>
+    <string name="spot_m1_hint">（提示：卡必须是 Type 2 —— NTAG213/215/216 或 Mifare Ultralight；M1 白卡写不了。点「读卡诊断」可以直接看出卡型。）</string>
+    <string name="spot_page_fail">第 %1$d 页写入失败（应答 %2$s）</string>
+    <string name="spot_readback_fail">回读第 %1$d 页失败</string>
+    <string name="spot_done_same">写卡完成，回读一致</string>
+    <string name="spot_done_diff">写卡完成，回读不一致（见下）</string>
+    <string name="spot_io_fail">写卡 IO 失败：%1$s</string>
+
+    <!-- 读卡诊断结果（TouchSpot.T 模板） -->
+    <string name="probe_no_tag">没有拿到卡</string>
+    <string name="probe_tech">技术栈：%1$s</string>
+    <string name="probe_uid">UID  ：%1$s（%2$d 字节）</string>
+    <string name="probe_not_nfca">不是 NFC-A 标签，不能当碰触点</string>
+    <string name="probe_atqa_sak">ATQA %1$s   SAK %2$s</string>
+    <string name="probe_pages">第 %1$2d-%2$2d 页：%3$s</string>
+    <string name="probe_chip">芯片：%1$s（厂商码 %2$s）</string>
+    <string name="probe_no_version">GET_VERSION 无应答（老 Ultralight 或仿卡，仍可用）</string>
+    <string name="probe_verdict_ok">=&gt; Type 2 卡，可以当碰触点用。第 4-15 页就是那 48 字节记录区（见上面「第 04-15 页」一行）。</string>
+    <string name="probe_io_fail">读卡失败：%1$s</string>
+</resources>
